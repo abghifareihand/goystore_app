@@ -12,6 +12,7 @@ class AppColor {
   static const Color grey200 = Color(0xffE5E7EB);
   static const Color grey300 = Color(0xffD1D5DB);
   static const Color grey400 = Color(0xff9CA3AF);
+  static const Color secondText = Color(0xff999999);
 }
 
 /// text style
@@ -23,7 +24,8 @@ TextStyle redTextStyle = const TextStyle(color: AppColor.red);
 TextStyle greenTextStyle = const TextStyle(color: AppColor.green);
 TextStyle blueTextStyle = const TextStyle(color: AppColor.blue);
 TextStyle yellowTextStyle = const TextStyle(color: AppColor.yellow);
-TextStyle greyTextStyle = const TextStyle(color: AppColor.grey200);
+TextStyle greyTextStyle = const TextStyle(color: AppColor.grey400);
+TextStyle secondTextTextStyle = const TextStyle(color: AppColor.secondText);
 
 /// text weight
 FontWeight light = FontWeight.w300;

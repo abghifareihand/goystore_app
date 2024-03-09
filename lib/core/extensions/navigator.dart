@@ -1,26 +1,39 @@
 import 'package:flutter/material.dart';
 
 /// Navigator
-extension NavigatorContextExt on BuildContext {
-  void pushPage(Widget page) {
-    Navigator.of(this).push(MaterialPageRoute(builder: (context) => page));
+extension NavigatorExt on BuildContext {
+  void pop<T extends Object>([T? result]) {
+    Navigator.pop(this, result);
   }
 
-  void pushReplacementPage(Widget page) {
-    Navigator.of(this)
-        .pushReplacement(MaterialPageRoute(builder: (context) => page));
+  void popToRoot<T extends Object>() {
+    Navigator.popUntil(this, (route) => route.isFirst);
   }
 
-  void pushAndRemoveUntilPage(Widget page) {
-    Navigator.of(this).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => page), (route) => false);
+  Future<T?> push<T extends Object>(Widget widget, [String? name]) async {
+    return Navigator.push<T>(
+      this,
+      MaterialPageRoute(
+        builder: (context) => widget,
+        settings: RouteSettings(name: name),
+      ),
+    );
   }
 
-  void popPage() {
-    Navigator.of(this).pop();
+  Future<T?> pushReplacement<T extends Object, TO extends Object>(
+      Widget widget) async {
+    return Navigator.pushReplacement<T, TO>(
+      this,
+      MaterialPageRoute(builder: (context) => widget),
+    );
   }
 
-  void popPageResult(result) {
-    Navigator.of(this).pop(result);
+  Future<T?> pushAndRemoveUntil<T extends Object>(
+      Widget widget, bool Function(Route<dynamic> route) predicate) async {
+    return Navigator.pushAndRemoveUntil<T>(
+      this,
+      MaterialPageRoute(builder: (context) => widget),
+      predicate,
+    );
   }
 }

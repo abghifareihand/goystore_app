@@ -72,7 +72,7 @@ class Button extends StatelessWidget {
                   if (icon != null) const SpaceWidth(10.0),
                   Text(
                     label,
-                    style: blackTextStyle.copyWith(
+                    style: whiteTextStyle.copyWith(
                       fontSize: fontSize,
                       fontWeight: bold,
                     ),

@@ -4,6 +4,7 @@ import 'package:goystore_app/core/constants/colors.dart';
 enum InputFieldStyle {
   text,
   email,
+  username,
   password,
   number,
 }
@@ -28,6 +29,14 @@ class InputField extends StatefulWidget {
     required this.controller,
     this.inputType = TextInputType.emailAddress,
     this.style = InputFieldStyle.email,
+  });
+
+  const InputField.username({
+    super.key,
+    required this.label,
+    required this.controller,
+    this.inputType = TextInputType.text,
+    this.style = InputFieldStyle.username,
   });
 
   const InputField.password({
@@ -91,14 +100,14 @@ class _InputFieldState extends State<InputField> {
                 borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(
                   color: AppColor.grey200,
-                  width: 1,
+                  width: 2,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(
                   color: AppColor.primary,
-                  width: 1,
+                  width: 2,
                 ),
               ),
               contentPadding: const EdgeInsets.symmetric(
@@ -114,7 +123,8 @@ class _InputFieldState extends State<InputField> {
                       },
                       child: Icon(
                         _obscureText ? Icons.visibility_off : Icons.visibility,
-                        color: _obscureText ? AppColor.grey200 : AppColor.primary,
+                        color:
+                            _obscureText ? AppColor.grey200 : AppColor.primary,
                       ),
                     )
                   : null,
