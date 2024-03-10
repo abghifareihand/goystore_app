@@ -7,6 +7,7 @@ import '../../core/constants/variables.dart';
 import '../models/auth_response_model.dart';
 import '../models/request/login_request_model.dart';
 import '../models/request/register_request_model.dart';
+import 'auth_local_datasource.dart';
 
 class AuthRemoteDatasource {
   Future<Either<String, AuthResponseModel>> register(
@@ -55,28 +56,28 @@ class AuthRemoteDatasource {
     }
   }
 
-  // Future<Either<String, String>> logout() async {
-  //   final token = await AuthLocalDatasource().getToken();
-  //   final headers = {
-  //     'Accept': 'application/json',
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Bearer $token',
-  //   };
-  //   final response = await http.post(
-  //     Uri.parse('${Variables.baseUrl}/api/logout'),
-  //     headers: headers,
-  //   );
+  Future<Either<String, String>> logout() async {
+    final token = await AuthLocalDatasource().getToken();
+    final headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $token',
+    };
+    final response = await http.post(
+      Uri.parse('${Variables.baseUrl}/api/logout'),
+      headers: headers,
+    );
 
-  //   debugPrint('Response Logout : ${response.body}');
+    debugPrint('Response Logout : ${response.body}');
 
-  //   if (response.statusCode == 200) {
-  //     final successMessage = jsonDecode(response.body)['meta']['message'];
-  //     return Right(successMessage);
-  //   } else {
-  //     final errorMessage = jsonDecode(response.body)['meta']['message'];
-  //     return Left(errorMessage);
-  //   }
-  // }
+    if (response.statusCode == 200) {
+      final successMessage = jsonDecode(response.body)['message'];
+      return Right(successMessage);
+    } else {
+      final errorMessage = jsonDecode(response.body)['message'];
+      return Left(errorMessage);
+    }
+  }
 
   // Future<Either<String, UserResponseModel>> getUser() async {
   //   final token = await AuthLocalDatasource().getToken();
