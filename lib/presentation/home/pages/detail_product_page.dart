@@ -1,25 +1,25 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/button.dart';
 import 'package:goystore_app/core/components/spaces.dart';
 import 'package:goystore_app/core/constants/colors.dart';
 import 'package:goystore_app/core/constants/formatter.dart';
+import 'package:goystore_app/core/extensions/navigator.dart';
+import 'package:goystore_app/core/extensions/screen.dart';
+import 'package:goystore_app/data/models/product_quantity.dart';
 import 'package:goystore_app/data/models/product_response_model.dart';
-import 'package:goystore_app/presentation/home/widgets/image_slider_product.dart';
+import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
+import 'package:goystore_app/presentation/cart/pages/cart_page.dart';
+import 'package:goystore_app/presentation/home/widgets/image_gallery_product.dart';
 
-class DetailProductPage extends StatefulWidget {
+class DetailProductPage extends StatelessWidget {
   final Product product;
   const DetailProductPage({
     super.key,
     required this.product,
   });
 
-  @override
-  State<DetailProductPage> createState() => _DetailProductPageState();
-}
-
-class _DetailProductPageState extends State<DetailProductPage> {
-  final CarouselController _controller = CarouselController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,9 @@ class _DetailProductPageState extends State<DetailProductPage> {
           Stack(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push(const CartPage());
+                },
                 icon: const Icon(
                   Icons.shopping_bag,
                 ),
@@ -38,15 +40,33 @@ class _DetailProductPageState extends State<DetailProductPage> {
               Positioned(
                 top: 0,
                 right: 0,
-                child: CircleAvatar(
-                  radius: 10,
-                  backgroundColor: AppColor.red,
-                  child: Text(
-                    '0',
-                    style: whiteTextStyle.copyWith(
-                      fontSize: 10,
-                    ),
-                  ),
+                child: BlocBuilder<CartBloc, CartState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      orElse: () {
+                        return const SizedBox.shrink();
+                      },
+                      loaded: (products) {
+                        int totalQuantity = 0;
+                        for (var cart in products) {
+                          totalQuantity += cart.quantity;
+                        }
+                        if (totalQuantity == 0) {
+                          return const SizedBox.shrink();
+                        }
+                        return CircleAvatar(
+                          radius: 10,
+                          backgroundColor: AppColor.red,
+                          child: Text(
+                            totalQuantity.toString(),
+                            style: whiteTextStyle.copyWith(
+                              fontSize: 10,
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  },
                 ),
               ),
             ],
@@ -55,12 +75,22 @@ class _DetailProductPageState extends State<DetailProductPage> {
       ),
       body: ListView(
         children: [
-          /// Image
-          ImageSliderProduct(
-            imageUrls: widget.product.galleries
-                .map((gallery) => gallery.imageUrl)
-                .toList(),
-            controller: _controller,
+          /// Image slider
+          // ImageSliderProduct(
+          //   imageUrls: widget.product.galleries
+          //       .map((gallery) => gallery.imageUrl)
+          //       .toList(),
+          //   controller: _controller,
+          // ),
+
+          /// Image no slider
+          ClipRRect(
+            child: Image.network(
+              product.galleries[0].imageUrl,
+              width: context.screenWidth,
+              height: 300,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -71,7 +101,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.product.name,
+                  product.name,
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: semiBold,
@@ -81,12 +111,25 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 ),
                 const SpaceHeight(16),
                 Text(
-                  widget.product.description,
+                  'Description',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
+                ),
+                const SpaceHeight(8),
+                Text(
+                  product.description,
                   style: blackTextStyle.copyWith(
                     fontSize: 14,
                     fontWeight: regular,
                   ),
                   textAlign: TextAlign.justify,
+                ),
+
+                /// Gallery
+                ImageGalleryProduct(
+                  galleries: product.galleries,
                 ),
               ],
             ),
@@ -102,7 +145,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
           children: [
             Expanded(
               child: Text(
-                priceFormat(widget.product.price),
+                priceFormat(product.price),
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: semiBold,
@@ -112,7 +155,15 @@ class _DetailProductPageState extends State<DetailProductPage> {
             const SpaceWidth(12.0),
             Expanded(
               child: Button.primary(
-                onPressed: () {},
+                onPressed: () {
+                  final productItems = ProductQuantity(
+                    product: product,
+                    quantity: 1,
+                  );
+                  context
+                      .read<CartBloc>()
+                      .add(CartEvent.addToCart(productItems));
+                },
                 label: 'Add to Cart',
               ),
             )

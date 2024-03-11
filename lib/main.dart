@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
 
 import 'data/datasources/auth_local_datasource.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProductsBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CartBloc(),
         ),
         BlocProvider(
           create: (context) => LogoutBloc(),
