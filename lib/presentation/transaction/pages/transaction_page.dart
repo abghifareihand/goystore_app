@@ -3,10 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/loading_spinkit.dart';
 import 'package:goystore_app/core/components/spaces.dart';
 import 'package:goystore_app/core/constants/colors.dart';
-import 'package:goystore_app/core/constants/formatter.dart';
+import 'package:goystore_app/presentation/transaction/bloc/transactions/transactions_bloc.dart';
 import 'package:goystore_app/presentation/transaction/widgets/transaction_card.dart';
 
-import '../bloc/transactions/transactions_bloc.dart';
 
 class TransactionPage extends StatelessWidget {
   const TransactionPage({super.key});
@@ -45,10 +44,7 @@ class TransactionPage extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: transactionResponse.data.length,
                       separatorBuilder: (BuildContext context, int index) {
-                        return Divider(
-                          height: 2,
-                          color: AppColor.grey300.withOpacity(0.2),
-                        );
+                        return const SpaceHeight(12);
                       },
                       itemBuilder: (context, index) {
                         return TransactionCard(transaction: transaction[index]);
@@ -58,6 +54,7 @@ class TransactionPage extends StatelessWidget {
                 );
               },
             ),
+            const SpaceHeight(50),
           ],
         ),
       ),

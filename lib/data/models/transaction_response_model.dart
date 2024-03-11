@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class TransactionResponseModel {
@@ -146,6 +145,7 @@ class Product {
     final int categoriesId;
     final String createdAt;
     final String updatedAt;
+    final List<Gallery> galleries;
 
     Product({
         required this.id,
@@ -156,6 +156,7 @@ class Product {
         required this.categoriesId,
         required this.createdAt,
         required this.updatedAt,
+        required this.galleries,
     });
 
     factory Product.fromJson(String str) => Product.fromMap(json.decode(str));
@@ -171,6 +172,7 @@ class Product {
         categoriesId: json["categories_id"],
         createdAt: json["created_at"],
         updatedAt: json["updated_at"],
+        galleries: List<Gallery>.from(json["galleries"].map((x) => Gallery.fromMap(x))),
     );
 
     Map<String, dynamic> toMap() => {
@@ -180,6 +182,43 @@ class Product {
         "description": description,
         "tags": tags,
         "categories_id": categoriesId,
+        "created_at": createdAt,
+        "updated_at": updatedAt,
+        "galleries": List<dynamic>.from(galleries.map((x) => x.toMap())),
+    };
+}
+
+class Gallery {
+    final int id;
+    final int productId;
+    final String imageUrl;
+    final String createdAt;
+    final String updatedAt;
+
+    Gallery({
+        required this.id,
+        required this.productId,
+        required this.imageUrl,
+        required this.createdAt,
+        required this.updatedAt,
+    });
+
+    factory Gallery.fromJson(String str) => Gallery.fromMap(json.decode(str));
+
+    String toJson() => json.encode(toMap());
+
+    factory Gallery.fromMap(Map<String, dynamic> json) => Gallery(
+        id: json["id"],
+        productId: json["product_id"],
+        imageUrl: json["image_url"],
+        createdAt: json["created_at"],
+        updatedAt: json["updated_at"],
+    );
+
+    Map<String, dynamic> toMap() => {
+        "id": id,
+        "product_id": productId,
+        "image_url": imageUrl,
         "created_at": createdAt,
         "updated_at": updatedAt,
     };

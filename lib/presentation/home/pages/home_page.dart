@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/loading_spinkit.dart';
 import 'package:goystore_app/core/components/spaces.dart';
-import 'package:goystore_app/core/constants/colors.dart';
 
 import '../bloc/products/products_bloc.dart';
 import '../widgets/grid_card_product.dart';

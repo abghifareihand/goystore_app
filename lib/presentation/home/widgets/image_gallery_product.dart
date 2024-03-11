@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:goystore_app/core/components/spaces.dart';
-import 'package:goystore_app/core/constants/colors.dart';
 import 'package:goystore_app/data/models/product_response_model.dart';
 
 class ImageGalleryProduct extends StatelessWidget {

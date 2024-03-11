@@ -4,14 +4,11 @@ import 'package:goystore_app/core/components/button.dart';
 import 'package:goystore_app/core/components/dialog.dart';
 import 'package:goystore_app/core/components/loading_spinkit.dart';
 import 'package:goystore_app/core/constants/colors.dart';
-import 'package:goystore_app/core/extensions/navigator.dart';
 import 'package:goystore_app/data/models/request/checkout_request_model.dart';
 import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
-import 'package:goystore_app/presentation/cart/widgets/list_card_product.dart';
 import 'package:goystore_app/presentation/checkout/bloc/checkout/checkout_bloc.dart';
 import 'package:goystore_app/presentation/checkout/widgets/checkout_card_payment.dart';
 import 'package:goystore_app/presentation/checkout/widgets/checkout_card_product.dart';
-import 'package:goystore_app/presentation/dashboard/pages/dashboard_page.dart';
 
 class CheckoutPage extends StatefulWidget {
   const CheckoutPage({super.key});
