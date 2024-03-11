@@ -144,9 +144,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     context
                         .read<CheckoutBloc>()
                         .add(CheckoutEvent.checkout(checkoutRequest));
-                    context
-                        .read<CheckoutBloc>()
-                        .add(const CheckoutEvent.started());
                   },
                   label: 'Checkout Now',
                 ),

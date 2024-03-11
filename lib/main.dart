@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
 import 'package:goystore_app/presentation/checkout/bloc/checkout/checkout_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
+import 'package:goystore_app/presentation/transaction/bloc/transactions/transactions_bloc.dart';
 
 import 'data/datasources/auth_local_datasource.dart';
 import 'presentation/auth/pages/login_page.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CheckoutBloc(),
+        ),
+        BlocProvider(
+          create: (context) => TransactionsBloc(),
         ),
         BlocProvider(
           create: (context) => LogoutBloc(),

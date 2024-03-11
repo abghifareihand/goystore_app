@@ -7,6 +7,8 @@ import 'package:goystore_app/presentation/dashboard/widgets/navbar_item.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
 import 'package:goystore_app/presentation/home/pages/home_page.dart';
 import 'package:goystore_app/presentation/profile/pages/profile_page.dart';
+import 'package:goystore_app/presentation/transaction/bloc/transactions/transactions_bloc.dart';
+import 'package:goystore_app/presentation/transaction/pages/transaction_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -19,15 +21,15 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void initState() {
     context.read<ProductsBloc>().add(const ProductsEvent.getProducts());
+    context.read<TransactionsBloc>().add(const TransactionsEvent.getTransactions());
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
       const HomePage(),
-      const Center(
-        child: Text('Order'),
-      ),
+      const TransactionPage(),
       const ProfilePage(),
     ];
     return BlocProvider(
@@ -69,7 +71,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                         NavbarItem(
                           index: 1,
-                          iconText: 'Order',
+                          iconText: 'Transaction',
                           iconActive: Images.iconOrder,
                           iconDisable: Images.iconOrderGrey,
                         ),
