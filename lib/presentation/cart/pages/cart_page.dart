@@ -3,10 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/button.dart';
 import 'package:goystore_app/core/constants/colors.dart';
 import 'package:goystore_app/core/constants/formatter.dart';
+import 'package:goystore_app/core/extensions/navigator.dart';
 import 'package:goystore_app/core/extensions/screen.dart';
 import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
 import 'package:goystore_app/presentation/cart/widgets/cart_empty.dart';
 import 'package:goystore_app/presentation/cart/widgets/list_card_product.dart';
+
+import '../../checkout/pages/checkout_page.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -104,7 +107,7 @@ class CartPage extends StatelessWidget {
                     const Spacer(),
                     Button.primary(
                       onPressed: () {
-                        // context.pushPage(const CheckoutPage());
+                        context.push(const CheckoutPage());
                       },
                       label: 'Continue to checkout',
                     ),

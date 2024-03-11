@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
+import 'package:goystore_app/presentation/checkout/bloc/checkout/checkout_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
 
 import 'data/datasources/auth_local_datasource.dart';
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
           create: (context) => CartBloc(),
         ),
         BlocProvider(
+          create: (context) => CheckoutBloc(),
+        ),
+        BlocProvider(
           create: (context) => LogoutBloc(),
         ),
       ],
@@ -39,18 +43,18 @@ class MyApp extends StatelessWidget {
           useMaterial3: false,
         ),
         debugShowCheckedModeBanner: false,
-        home: const DashboardPage(),
-        // home: FutureBuilder<bool>(
-        //   future: AuthLocalDatasource().isLogin(),
-        //   builder: (context, snapshot) {
-        //     debugPrint("isLogin: ${snapshot.data}");
-        //     if (snapshot.data != null && snapshot.data!) {
-        //       return const DashboardPage();
-        //     } else {
-        //       return const LoginPage();
-        //     }
-        //   },
-        // ),
+        // home: const DashboardPage(),
+        home: FutureBuilder<bool>(
+          future: AuthLocalDatasource().isLogin(),
+          builder: (context, snapshot) {
+            debugPrint("isLogin: ${snapshot.data}");
+            if (snapshot.data != null && snapshot.data!) {
+              return const DashboardPage();
+            } else {
+              return const LoginPage();
+            }
+          },
+        ),
       ),
     );
   }
