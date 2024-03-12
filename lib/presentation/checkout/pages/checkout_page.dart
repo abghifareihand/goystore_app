@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/button.dart';
 import 'package:goystore_app/core/components/dialog.dart';
 import 'package:goystore_app/core/components/loading_spinkit.dart';
+import 'package:goystore_app/core/components/payment/payment_page.dart';
 import 'package:goystore_app/core/constants/colors.dart';
+import 'package:goystore_app/core/extensions/navigator.dart';
 import 'package:goystore_app/data/models/request/checkout_request_model.dart';
 import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
 import 'package:goystore_app/presentation/checkout/bloc/checkout/checkout_bloc.dart';
@@ -120,7 +122,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 },
               );
             },
-            loaded: (data) {},
+            loaded: (checkoutResponse) {
+              context.push(
+                PaymentPage(
+                  paymentUrl: checkoutResponse.data.paymentUrl,
+                ),
+              );
+            },
           );
         },
         builder: (context, state) {
@@ -141,6 +149,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     context
                         .read<CheckoutBloc>()
                         .add(CheckoutEvent.checkout(checkoutRequest));
+                    context.read<CartBloc>().add(const CartEvent.started());
                   },
                   label: 'Checkout Now',
                 ),

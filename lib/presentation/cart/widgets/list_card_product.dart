@@ -79,7 +79,7 @@ class ListCardProduct extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: AppColor.grey400,
+                                color: AppColor.primary,
                                 width: 2,
                               ),
                             ),
@@ -88,7 +88,7 @@ class ListCardProduct extends StatelessWidget {
                                   ? Icons.delete
                                   : Icons.remove,
                               size: 20,
-                              color: AppColor.grey400,
+                              color: AppColor.primary,
                             ),
                           ),
                         ),
@@ -115,14 +115,14 @@ class ListCardProduct extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
-                                color: AppColor.grey400,
+                                color: AppColor.primary,
                                 width: 2,
                               ),
                             ),
                             child: const Icon(
                               Icons.add,
                               size: 20,
-                              color: AppColor.grey400,
+                              color: AppColor.primary,
                             ),
                           ),
                         ),

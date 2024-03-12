@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goystore_app/core/components/payment/payment_page.dart';
 import 'package:goystore_app/core/components/spaces.dart';
 import 'package:goystore_app/core/constants/colors.dart';
 import 'package:goystore_app/core/constants/formatter.dart';
@@ -40,61 +41,6 @@ class TransactionCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // / Order Item
-            // ...transaction.items.map((item) {
-            //   return Row(
-            //     children: [
-            //       /// Image
-            //       ClipRRect(
-            //         borderRadius: BorderRadius.circular(16),
-            //         child: Image.network(
-            //           height: 60,
-            //           item.product.galleries[0].imageUrl,
-            //           fit: BoxFit.cover,
-            //         ),
-            //       ),
-            //       Expanded(
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.start,
-            //           children: [
-            //             Text(
-            //               item.product.name,
-            //               style: blackTextStyle.copyWith(
-            //                 fontSize: 12,
-            //               ),
-            //               maxLines: 1,
-            //               overflow: TextOverflow.ellipsis,
-            //             ),
-            //             Row(
-            //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //               children: [
-            //                 Text(
-            //                   '${item.quantity} item',
-            //                   style: greyTextStyle.copyWith(
-            //                     fontSize: 12,
-            //                     fontWeight: medium,
-            //                   ),
-            //                   maxLines: 1,
-            //                   overflow: TextOverflow.ellipsis,
-            //                 ),
-            //                 Text(
-            //                   priceFormat(item.product.price * item.quantity),
-            //                   style: blackTextStyle.copyWith(
-            //                     fontSize: 12,
-            //                   ),
-            //                   maxLines: 1,
-            //                   overflow: TextOverflow.ellipsis,
-            //                 ),
-            //               ],
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   );
-            // }),
-
-            // const SpaceHeight(12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -138,7 +84,6 @@ class TransactionCard extends StatelessWidget {
             ),
             const SpaceHeight(4),
             const Divider(color: AppColor.grey300),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -164,7 +109,9 @@ class TransactionCard extends StatelessWidget {
                   visible: transaction.paymentStatus != 'SUCCESS',
                   child: ElevatedButton(
                     onPressed: () {
-                      // Ke Page Payment Url
+                      context.push(
+                        PaymentPage(paymentUrl: transaction.paymentUrl),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColor.green,
