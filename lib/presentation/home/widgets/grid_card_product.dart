@@ -82,7 +82,8 @@ class GridCardProduct extends StatelessWidget {
                   Text(
                     priceFormat(product.price),
                     style: blackTextStyle.copyWith(
-                      fontWeight: regular,
+                      fontSize: 16,
+                      fontWeight: medium,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

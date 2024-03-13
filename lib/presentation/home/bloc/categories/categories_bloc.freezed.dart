@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'products_bloc.dart';
+part of 'categories_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$ProductsEvent {
+mixin _$CategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getProducts,
-    required TResult Function(int categoryId) getProductByCategory,
+    required TResult Function() getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getProducts,
-    TResult? Function(int categoryId)? getProductByCategory,
+    TResult? Function()? getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getProducts,
-    TResult Function(int categoryId)? getProductByCategory,
+    TResult Function()? getCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetProducts value) getProducts,
-    required TResult Function(_GetProductByCategory value) getProductByCategory,
+    required TResult Function(_GetCategories value) getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetProducts value)? getProducts,
-    TResult? Function(_GetProductByCategory value)? getProductByCategory,
+    TResult? Function(_GetCategories value)? getCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetProducts value)? getProducts,
-    TResult Function(_GetProductByCategory value)? getProductByCategory,
+    TResult Function(_GetCategories value)? getCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductsEventCopyWith<$Res> {
-  factory $ProductsEventCopyWith(
-          ProductsEvent value, $Res Function(ProductsEvent) then) =
-      _$ProductsEventCopyWithImpl<$Res, ProductsEvent>;
+abstract class $CategoriesEventCopyWith<$Res> {
+  factory $CategoriesEventCopyWith(
+          CategoriesEvent value, $Res Function(CategoriesEvent) then) =
+      _$CategoriesEventCopyWithImpl<$Res, CategoriesEvent>;
 }
 
 /// @nodoc
-class _$ProductsEventCopyWithImpl<$Res, $Val extends ProductsEvent>
-    implements $ProductsEventCopyWith<$Res> {
-  _$ProductsEventCopyWithImpl(this._value, this._then);
+class _$CategoriesEventCopyWithImpl<$Res, $Val extends CategoriesEvent>
+    implements $CategoriesEventCopyWith<$Res> {
+  _$CategoriesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$CategoriesEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -103,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'ProductsEvent.started()';
+    return 'CategoriesEvent.started()';
   }
 
   @override
@@ -119,8 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getProducts,
-    required TResult Function(int categoryId) getProductByCategory,
+    required TResult Function() getCategories,
   }) {
     return started();
   }
@@ -129,8 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getProducts,
-    TResult? Function(int categoryId)? getProductByCategory,
+    TResult? Function()? getCategories,
   }) {
     return started?.call();
   }
@@ -139,8 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getProducts,
-    TResult Function(int categoryId)? getProductByCategory,
+    TResult Function()? getCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -153,8 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetProducts value) getProducts,
-    required TResult Function(_GetProductByCategory value) getProductByCategory,
+    required TResult Function(_GetCategories value) getCategories,
   }) {
     return started(this);
   }
@@ -163,8 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetProducts value)? getProducts,
-    TResult? Function(_GetProductByCategory value)? getProductByCategory,
+    TResult? Function(_GetCategories value)? getCategories,
   }) {
     return started?.call(this);
   }
@@ -173,8 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetProducts value)? getProducts,
-    TResult Function(_GetProductByCategory value)? getProductByCategory,
+    TResult Function(_GetCategories value)? getCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -184,40 +172,40 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements ProductsEvent {
+abstract class _Started implements CategoriesEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetProductsImplCopyWith<$Res> {
-  factory _$$GetProductsImplCopyWith(
-          _$GetProductsImpl value, $Res Function(_$GetProductsImpl) then) =
-      __$$GetProductsImplCopyWithImpl<$Res>;
+abstract class _$$GetCategoriesImplCopyWith<$Res> {
+  factory _$$GetCategoriesImplCopyWith(
+          _$GetCategoriesImpl value, $Res Function(_$GetCategoriesImpl) then) =
+      __$$GetCategoriesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetProductsImplCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$GetProductsImpl>
-    implements _$$GetProductsImplCopyWith<$Res> {
-  __$$GetProductsImplCopyWithImpl(
-      _$GetProductsImpl _value, $Res Function(_$GetProductsImpl) _then)
+class __$$GetCategoriesImplCopyWithImpl<$Res>
+    extends _$CategoriesEventCopyWithImpl<$Res, _$GetCategoriesImpl>
+    implements _$$GetCategoriesImplCopyWith<$Res> {
+  __$$GetCategoriesImplCopyWithImpl(
+      _$GetCategoriesImpl _value, $Res Function(_$GetCategoriesImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetProductsImpl implements _GetProducts {
-  const _$GetProductsImpl();
+class _$GetCategoriesImpl implements _GetCategories {
+  const _$GetCategoriesImpl();
 
   @override
   String toString() {
-    return 'ProductsEvent.getProducts()';
+    return 'CategoriesEvent.getCategories()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetProductsImpl);
+        (other.runtimeType == runtimeType && other is _$GetCategoriesImpl);
   }
 
   @override
@@ -227,32 +215,29 @@ class _$GetProductsImpl implements _GetProducts {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getProducts,
-    required TResult Function(int categoryId) getProductByCategory,
+    required TResult Function() getCategories,
   }) {
-    return getProducts();
+    return getCategories();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getProducts,
-    TResult? Function(int categoryId)? getProductByCategory,
+    TResult? Function()? getCategories,
   }) {
-    return getProducts?.call();
+    return getCategories?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getProducts,
-    TResult Function(int categoryId)? getProductByCategory,
+    TResult Function()? getCategories,
     required TResult orElse(),
   }) {
-    if (getProducts != null) {
-      return getProducts();
+    if (getCategories != null) {
+      return getCategories();
     }
     return orElse();
   }
@@ -261,191 +246,45 @@ class _$GetProductsImpl implements _GetProducts {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetProducts value) getProducts,
-    required TResult Function(_GetProductByCategory value) getProductByCategory,
+    required TResult Function(_GetCategories value) getCategories,
   }) {
-    return getProducts(this);
+    return getCategories(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetProducts value)? getProducts,
-    TResult? Function(_GetProductByCategory value)? getProductByCategory,
+    TResult? Function(_GetCategories value)? getCategories,
   }) {
-    return getProducts?.call(this);
+    return getCategories?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetProducts value)? getProducts,
-    TResult Function(_GetProductByCategory value)? getProductByCategory,
+    TResult Function(_GetCategories value)? getCategories,
     required TResult orElse(),
   }) {
-    if (getProducts != null) {
-      return getProducts(this);
+    if (getCategories != null) {
+      return getCategories(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetProducts implements ProductsEvent {
-  const factory _GetProducts() = _$GetProductsImpl;
+abstract class _GetCategories implements CategoriesEvent {
+  const factory _GetCategories() = _$GetCategoriesImpl;
 }
 
 /// @nodoc
-abstract class _$$GetProductByCategoryImplCopyWith<$Res> {
-  factory _$$GetProductByCategoryImplCopyWith(_$GetProductByCategoryImpl value,
-          $Res Function(_$GetProductByCategoryImpl) then) =
-      __$$GetProductByCategoryImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({int categoryId});
-}
-
-/// @nodoc
-class __$$GetProductByCategoryImplCopyWithImpl<$Res>
-    extends _$ProductsEventCopyWithImpl<$Res, _$GetProductByCategoryImpl>
-    implements _$$GetProductByCategoryImplCopyWith<$Res> {
-  __$$GetProductByCategoryImplCopyWithImpl(_$GetProductByCategoryImpl _value,
-      $Res Function(_$GetProductByCategoryImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryId = null,
-  }) {
-    return _then(_$GetProductByCategoryImpl(
-      null == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetProductByCategoryImpl implements _GetProductByCategory {
-  const _$GetProductByCategoryImpl(this.categoryId);
-
-  @override
-  final int categoryId;
-
-  @override
-  String toString() {
-    return 'ProductsEvent.getProductByCategory(categoryId: $categoryId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetProductByCategoryImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, categoryId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetProductByCategoryImplCopyWith<_$GetProductByCategoryImpl>
-      get copyWith =>
-          __$$GetProductByCategoryImplCopyWithImpl<_$GetProductByCategoryImpl>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function() getProducts,
-    required TResult Function(int categoryId) getProductByCategory,
-  }) {
-    return getProductByCategory(categoryId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function()? getProducts,
-    TResult? Function(int categoryId)? getProductByCategory,
-  }) {
-    return getProductByCategory?.call(categoryId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function()? getProducts,
-    TResult Function(int categoryId)? getProductByCategory,
-    required TResult orElse(),
-  }) {
-    if (getProductByCategory != null) {
-      return getProductByCategory(categoryId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_GetProducts value) getProducts,
-    required TResult Function(_GetProductByCategory value) getProductByCategory,
-  }) {
-    return getProductByCategory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_GetProducts value)? getProducts,
-    TResult? Function(_GetProductByCategory value)? getProductByCategory,
-  }) {
-    return getProductByCategory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_GetProducts value)? getProducts,
-    TResult Function(_GetProductByCategory value)? getProductByCategory,
-    required TResult orElse(),
-  }) {
-    if (getProductByCategory != null) {
-      return getProductByCategory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetProductByCategory implements ProductsEvent {
-  const factory _GetProductByCategory(final int categoryId) =
-      _$GetProductByCategoryImpl;
-
-  int get categoryId;
-  @JsonKey(ignore: true)
-  _$$GetProductByCategoryImplCopyWith<_$GetProductByCategoryImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$ProductsState {
+mixin _$CategoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductResponseModel productResponse) loaded,
+    required TResult Function(CategoryResponseModel categoryResponse) loaded,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -453,7 +292,7 @@ mixin _$ProductsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductResponseModel productResponse)? loaded,
+    TResult? Function(CategoryResponseModel categoryResponse)? loaded,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -461,7 +300,7 @@ mixin _$ProductsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductResponseModel productResponse)? loaded,
+    TResult Function(CategoryResponseModel categoryResponse)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -494,16 +333,16 @@ mixin _$ProductsState {
 }
 
 /// @nodoc
-abstract class $ProductsStateCopyWith<$Res> {
-  factory $ProductsStateCopyWith(
-          ProductsState value, $Res Function(ProductsState) then) =
-      _$ProductsStateCopyWithImpl<$Res, ProductsState>;
+abstract class $CategoriesStateCopyWith<$Res> {
+  factory $CategoriesStateCopyWith(
+          CategoriesState value, $Res Function(CategoriesState) then) =
+      _$CategoriesStateCopyWithImpl<$Res, CategoriesState>;
 }
 
 /// @nodoc
-class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
-    implements $ProductsStateCopyWith<$Res> {
-  _$ProductsStateCopyWithImpl(this._value, this._then);
+class _$CategoriesStateCopyWithImpl<$Res, $Val extends CategoriesState>
+    implements $CategoriesStateCopyWith<$Res> {
+  _$CategoriesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -520,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -534,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'ProductsState.initial()';
+    return 'CategoriesState.initial()';
   }
 
   @override
@@ -551,7 +390,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductResponseModel productResponse) loaded,
+    required TResult Function(CategoryResponseModel categoryResponse) loaded,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -562,7 +401,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductResponseModel productResponse)? loaded,
+    TResult? Function(CategoryResponseModel categoryResponse)? loaded,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -573,7 +412,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductResponseModel productResponse)? loaded,
+    TResult Function(CategoryResponseModel categoryResponse)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -621,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements ProductsState {
+abstract class _Initial implements CategoriesState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -634,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -648,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'ProductsState.loading()';
+    return 'CategoriesState.loading()';
   }
 
   @override
@@ -665,7 +504,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductResponseModel productResponse) loaded,
+    required TResult Function(CategoryResponseModel categoryResponse) loaded,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -676,7 +515,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductResponseModel productResponse)? loaded,
+    TResult? Function(CategoryResponseModel categoryResponse)? loaded,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -687,7 +526,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductResponseModel productResponse)? loaded,
+    TResult Function(CategoryResponseModel categoryResponse)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -735,7 +574,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements ProductsState {
+abstract class _Loading implements CategoriesState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -745,12 +584,12 @@ abstract class _$$LoadedImplCopyWith<$Res> {
           _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
       __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProductResponseModel productResponse});
+  $Res call({CategoryResponseModel categoryResponse});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
       _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
@@ -759,13 +598,13 @@ class __$$LoadedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? productResponse = null,
+    Object? categoryResponse = null,
   }) {
     return _then(_$LoadedImpl(
-      null == productResponse
-          ? _value.productResponse
-          : productResponse // ignore: cast_nullable_to_non_nullable
-              as ProductResponseModel,
+      null == categoryResponse
+          ? _value.categoryResponse
+          : categoryResponse // ignore: cast_nullable_to_non_nullable
+              as CategoryResponseModel,
     ));
   }
 }
@@ -773,14 +612,14 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl(this.productResponse);
+  const _$LoadedImpl(this.categoryResponse);
 
   @override
-  final ProductResponseModel productResponse;
+  final CategoryResponseModel categoryResponse;
 
   @override
   String toString() {
-    return 'ProductsState.loaded(productResponse: $productResponse)';
+    return 'CategoriesState.loaded(categoryResponse: $categoryResponse)';
   }
 
   @override
@@ -788,12 +627,12 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.productResponse, productResponse) ||
-                other.productResponse == productResponse));
+            (identical(other.categoryResponse, categoryResponse) ||
+                other.categoryResponse == categoryResponse));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, productResponse);
+  int get hashCode => Object.hash(runtimeType, categoryResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -806,10 +645,10 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductResponseModel productResponse) loaded,
+    required TResult Function(CategoryResponseModel categoryResponse) loaded,
     required TResult Function(String message) error,
   }) {
-    return loaded(productResponse);
+    return loaded(categoryResponse);
   }
 
   @override
@@ -817,10 +656,10 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductResponseModel productResponse)? loaded,
+    TResult? Function(CategoryResponseModel categoryResponse)? loaded,
     TResult? Function(String message)? error,
   }) {
-    return loaded?.call(productResponse);
+    return loaded?.call(categoryResponse);
   }
 
   @override
@@ -828,12 +667,12 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductResponseModel productResponse)? loaded,
+    TResult Function(CategoryResponseModel categoryResponse)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(productResponse);
+      return loaded(categoryResponse);
     }
     return orElse();
   }
@@ -876,11 +715,11 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements ProductsState {
-  const factory _Loaded(final ProductResponseModel productResponse) =
+abstract class _Loaded implements CategoriesState {
+  const factory _Loaded(final CategoryResponseModel categoryResponse) =
       _$LoadedImpl;
 
-  ProductResponseModel get productResponse;
+  CategoryResponseModel get categoryResponse;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -897,7 +736,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$CategoriesStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -927,7 +766,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'ProductsState.error(message: $message)';
+    return 'CategoriesState.error(message: $message)';
   }
 
   @override
@@ -952,7 +791,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ProductResponseModel productResponse) loaded,
+    required TResult Function(CategoryResponseModel categoryResponse) loaded,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -963,7 +802,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ProductResponseModel productResponse)? loaded,
+    TResult? Function(CategoryResponseModel categoryResponse)? loaded,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -974,7 +813,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ProductResponseModel productResponse)? loaded,
+    TResult Function(CategoryResponseModel categoryResponse)? loaded,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -1022,7 +861,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements ProductsState {
+abstract class _Error implements CategoriesState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;

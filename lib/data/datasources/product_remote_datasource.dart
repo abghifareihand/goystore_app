@@ -26,4 +26,24 @@ class ProductRemoteDatasource {
       return Left(errorMessage);
     }
   }
+
+  Future<Either<String, ProductResponseModel>> getProductByCategory(int categoryId) async {
+    final headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    };
+    final response = await http.get(
+      Uri.parse('${Variables.baseUrl}/api/products?categories=$categoryId'),
+      headers: headers,
+    );
+
+    debugPrint('Response Get Product By Category  : ${response.body}');
+
+    if (response.statusCode == 200) {
+      return Right(ProductResponseModel.fromJson(response.body));
+    } else {
+      final errorMessage = jsonDecode(response.body)['message'];
+      return Left(errorMessage);
+    }
+  }
 }
