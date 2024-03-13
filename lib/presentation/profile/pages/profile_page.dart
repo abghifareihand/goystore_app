@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goystore_app/core/components/button.dart';
+import 'package:goystore_app/core/components/dialog.dart';
 import 'package:goystore_app/core/components/loading_spinkit.dart';
 import 'package:goystore_app/core/components/spaces.dart';
 import 'package:goystore_app/core/constants/colors.dart';
@@ -51,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                                     fit: BoxFit.cover,
                                   )
                                 : Image.asset(
-                                    Images.placeholder,
+                                    Images.iconProfile,
                                     width: 120,
                                     height: 120,
                                     fit: BoxFit.cover,
@@ -82,19 +83,49 @@ class ProfilePage extends StatelessWidget {
                           },
                         ),
                         ListMenu(
-                          icon: Icons.book,
-                          title: 'Riwayat Transaksi',
-                          onTap: () {},
+                          icon: Icons.privacy_tip,
+                          title: 'Privacy & Policy',
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const CustomDialog(
+                                  title: 'Privacy & Policy',
+                                  message: 'Coming soon...',
+                                );
+                              },
+                            );
+                          },
                         ),
                         ListMenu(
                           icon: Icons.info,
-                          title: 'Pusat Bantuan',
-                          onTap: () {},
+                          title: 'About App',
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const CustomDialog(
+                                  title: 'About App',
+                                  message: 'Coming soon...',
+                                );
+                              },
+                            );
+                          },
                         ),
                         ListMenu(
                           icon: Icons.settings,
                           title: 'Settings',
-                          onTap: () {},
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return const CustomDialog(
+                                  title: 'Settings',
+                                  message: 'Coming soon...',
+                                );
+                              },
+                            );
+                          },
                         ),
                       ],
                     );
