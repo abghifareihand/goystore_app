@@ -7,6 +7,7 @@ import 'package:goystore_app/presentation/dashboard/widgets/navbar_item.dart';
 import 'package:goystore_app/presentation/home/bloc/categories/categories_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
 import 'package:goystore_app/presentation/home/pages/home_page.dart';
+import 'package:goystore_app/presentation/profile/bloc/user/user_bloc.dart';
 import 'package:goystore_app/presentation/profile/pages/profile_page.dart';
 import 'package:goystore_app/presentation/transaction/bloc/transactions/transactions_bloc.dart';
 import 'package:goystore_app/presentation/transaction/pages/transaction_page.dart';
@@ -24,6 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
     context.read<CategoriesBloc>().add(const CategoriesEvent.getCategories());
     context.read<ProductsBloc>().add(const ProductsEvent.getProducts());
     context.read<TransactionsBloc>().add(const TransactionsEvent.getTransactions());
+    context.read<UserBloc>().add(const UserEvent.getUser());
     super.initState();
   }
 

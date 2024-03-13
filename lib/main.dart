@@ -4,6 +4,7 @@ import 'package:goystore_app/presentation/cart/bloc/cart/cart_bloc.dart';
 import 'package:goystore_app/presentation/checkout/bloc/checkout/checkout_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/categories/categories_bloc.dart';
 import 'package:goystore_app/presentation/home/bloc/products/products_bloc.dart';
+import 'package:goystore_app/presentation/profile/bloc/user/user_bloc.dart';
 import 'package:goystore_app/presentation/transaction/bloc/transactions/transactions_bloc.dart';
 
 import 'data/datasources/auth_local_datasource.dart';
@@ -41,6 +42,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => TransactionsBloc(),
+        ),
+        BlocProvider(
+          create: (context) => UserBloc(),
         ),
         BlocProvider(
           create: (context) => LogoutBloc(),

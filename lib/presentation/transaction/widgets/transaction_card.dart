@@ -69,15 +69,20 @@ class TransactionCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     color: transaction.paymentStatus == 'SUCCESS'
                         ? AppColor.green.withOpacity(0.2)
-                        : AppColor.red.withOpacity(0.2),
+                        : transaction.paymentStatus == 'PENDING'
+                            ? AppColor.red.withOpacity(0.2)
+                            : AppColor.grey400.withOpacity(0.2),
                   ),
                   child: Text(
                     transaction.paymentStatus,
                     style: transaction.paymentStatus == 'SUCCESS'
                         ? greenTextStyle.copyWith(
                             fontSize: 12, fontWeight: medium)
-                        : redTextStyle.copyWith(
-                            fontSize: 12, fontWeight: medium),
+                        : transaction.paymentStatus == 'PENDING'
+                            ? redTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium)
+                            : greyTextStyle.copyWith(
+                                fontSize: 12, fontWeight: medium),
                   ),
                 ),
               ],
@@ -106,7 +111,7 @@ class TransactionCard extends StatelessWidget {
                   ],
                 ),
                 Visibility(
-                  visible: transaction.paymentStatus != 'SUCCESS',
+                  visible: transaction.paymentStatus == 'PENDING',
                   child: ElevatedButton(
                     onPressed: () {
                       context.push(

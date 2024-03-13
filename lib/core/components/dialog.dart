@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goystore_app/core/constants/colors.dart';
 import 'package:goystore_app/core/extensions/navigator.dart';
 
 class CustomDialog extends StatelessWidget {
@@ -14,14 +15,26 @@ class CustomDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
       title: Text(title),
       content: Text(message),
       actions: [
-        TextButton(
-          onPressed: () {
-            context.pop();
-          },
-          child: const Text('OK'),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: ElevatedButton(
+            onPressed: () {
+              context.pop();
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColor.primary,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+            child: const Text('OK'),
+          ),
         ),
       ],
     );
