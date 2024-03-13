@@ -1,6 +1,6 @@
 # Goystore App
 
-<img src="https://i.ibb.co/8DJWq2p/goystore.png"/>
+<img src="https://i.ibb.co/8DJWq2p/goystore.png" width="300"/>
 
 ### Apps Feature:
 
