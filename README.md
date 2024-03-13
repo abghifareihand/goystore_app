@@ -1,16 +1,12 @@
-# goystore_app
+# Goystore App
 
-A new Flutter project.
+<img src="https://i.ibb.co/8DJWq2p/goystore.png"/>
 
-## Getting Started
+### Apps Feature:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Get All Product
+- Get Product by Category
+- Product Detail
+- Add to Cart and Remove to Cart Product
+- Get Transactions (PENDING, SUCCESS OR EXPIRED) by Midtrans
+- Payment Gateway Midtrans
